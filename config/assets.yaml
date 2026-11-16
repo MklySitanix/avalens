@@ -1,0 +1,53 @@
+# Реестр активов AvaLens. Новый актив добавляется записью здесь, код модулей не меняется.
+assets:
+  AVAX:
+    name: Avalanche
+    binance_pair: AVAXUSDT
+    coingecko_id: avalanche-2
+    llama_chain: Avalanche
+    llama_fees_slug: avalanche
+    chain_id: "43114"          # C-Chain в Avalanche Metrics API
+    metrics_network: mainnet   # показатели стейкинга Primary Network
+    subreddit: Avax
+    keywords: [avalanche, avax, "ava labs", "c-chain", "avalanche9000"]
+    # слово avalanche вне криптоконтекста (лавины в горах) отсекается
+    exclude_words: [snow, ski, skier, skiing, mountain, rescue, snowboard, hockey, colorado]
+    onchain_metrics: [activeAddresses, txCount, feesPaid, tvl, validatorCount, delegatorCount]
+  ETH:
+    name: Ethereum
+    binance_pair: ETHUSDT
+    coingecko_id: ethereum
+    llama_chain: Ethereum
+    llama_fees_slug: ethereum
+    chain_id: null
+    metrics_network: null
+    subreddit: ethereum
+    keywords: [ethereum, eth, ether, vitalik]
+    exclude_words: []
+    onchain_metrics: [tvl, fees_usd, dex_volume_usd]
+
+# Новостные ленты (RSS). {query} подставляется из названия и тикера актива.
+news_feeds:
+  - {name: cointelegraph, url: "https://cointelegraph.com/rss", reliability: 0.8}
+  - {name: coindesk, url: "https://www.coindesk.com/arc/outboundfeeds/rss/", reliability: 0.8}
+  - {name: decrypt, url: "https://decrypt.co/feed", reliability: 0.8}
+  - {name: cryptoslate, url: "https://cryptoslate.com/feed/", reliability: 0.8}
+  - {name: google_news, url: "https://news.google.com/rss/search?q={query}&hl=en-US&gl=US&ceid=US:en", reliability: 0.8}
+
+# Надёжность источников (r в Confidence Score)
+reliability:
+  binance: 1.0
+  avalanche_metrics: 1.0
+  coingecko: 0.9
+  defillama: 0.9
+  alternative_me: 0.9
+  news: 0.8
+  reddit: 0.6
+  synthetic: 0.5
+
+# Пороги актуальности, часы
+freshness_hours:
+  market: 24
+  onchain: 48
+  posts: 72
+  fundamentals: 168

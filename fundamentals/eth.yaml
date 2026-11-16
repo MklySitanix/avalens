@@ -1,0 +1,26 @@
+symbol: ETH
+verified_at: "2026-11-16"
+token_purpose: "Нативный токен Ethereum: оплата газа, стейкинг валидаторов, залог в DeFi"
+demand_sources:
+  - {name: "Оплата комиссий (газ)", note: "все транзакции первого уровня оплачиваются в ETH"}
+  - {name: "Стейкинг", note: "валидатор блокирует ETH"}
+  - {name: "Залог в DeFi", note: "ETH — основной залоговый актив протоколов"}
+max_supply: null
+genesis_supply: null
+fee_burn: partial
+fee_burn_note: "Сжигается базовая часть комиссии (EIP-1559), приоритетная достаётся валидаторам"
+distribution: null
+distribution_source: null
+inflation_ref_pct: null
+inflation_source: null
+unlocks_note: "Разблокировок нет: токен полностью в обращении"
+technology:
+  consensus: "Proof-of-Stake (Gasper)"
+  architecture: "Один базовый слой и сети второго уровня (rollups)"
+  criteria:
+    fast_finality: {value: false, note: "экономическая финализация занимает около 13 минут"}
+    proof_of_stake: {value: true, note: "безопасность обеспечена залогом валидаторов"}
+    evm_compatible: {value: true, note: "EVM — родная среда исполнения"}
+    horizontal_scaling: {value: true, note: "масштабирование через сети второго уровня"}
+sources:
+  - "https://ethereum.org/en/roadmap/"

@@ -1,0 +1,36 @@
+# Справочные факты о проекте Avalanche. У этих данных нет API, поэтому они ведутся вручную.
+# У каждого факта есть источник; запись старше 180 дней система помечает как требующую проверки.
+symbol: AVAX
+verified_at: "2026-11-16"
+token_purpose: "Нативный токен Primary Network: оплата газа, стейкинг валидаторов и делегаторов, расчётная единица сети"
+demand_sources:
+  - {name: "Оплата комиссий (газ)", note: "каждая транзакция в C-Chain оплачивается в AVAX"}
+  - {name: "Стейкинг", note: "валидатору нужно не менее 2000 AVAX, делегатору — не менее 25 AVAX"}
+  - {name: "Сети L1 Avalanche", note: "валидаторы L1 платят сети в AVAX"}
+max_supply: 720000000
+genesis_supply: 360000000
+fee_burn: full            # full | partial | none
+fee_burn_note: "Комиссии не достаются валидаторам, а сжигаются"
+# Доли от максимальной эмиссии, %
+distribution:
+  staking_rewards: 50
+  team_foundation: 19
+  investors: 11
+  public_sale: 10
+  community: 10
+distribution_source: "https://www.stakingrewards.com/earn/avalanche"
+inflation_ref_pct: 3.3
+inflation_source: "https://www.stakingrewards.com/asset/ava"
+unlocks_note: "Данных об оставшихся разблокировках в бесплатных источниках нет — критерий не оценивается"
+technology:
+  consensus: "Proof-of-Stake, семейство протоколов Avalanche (Snowman)"
+  architecture: "Primary Network из трёх цепей (P-, X-, C-Chain) и независимые сети L1"
+  criteria:
+    fast_finality: {value: true, note: "финализация транзакции около 1–2 секунд"}
+    proof_of_stake: {value: true, note: "нет затрат энергии на майнинг, безопасность обеспечена залогом"}
+    evm_compatible: {value: true, note: "C-Chain совместима с EVM: приложения Ethereum переносятся без переписывания"}
+    horizontal_scaling: {value: true, note: "нагрузка выносится в отдельные сети L1"}
+sources:
+  - "https://support.avax.network/en/articles/6912428-tokenomics-faq"
+  - "https://coinbureau.com/review/avalanche-avax"
+  - "https://www.stakingrewards.com/earn/avalanche"
